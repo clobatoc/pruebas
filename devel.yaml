@@ -56,7 +56,8 @@ services:
 
 networks:
     default:
-        internal: true
+        #internal: true
+        internal: false
 
 volumes:
     filestore:
