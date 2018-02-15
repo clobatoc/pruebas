@@ -1,0 +1,53 @@
+<odoo>
+    <!--
+    MUCHO OJO CON EL ORDEN DE LAS COSAS DADO QUE PARA PODER REFERENCIAR ALGO,
+    PRIMERO TIENE QUE EXISTIR.
+
+    id= xml-id, <modulo>.<identificador> y solo hace falta poner el identificador,
+    pero para acceder tendremos que utilizar el nombre completo.
+    -->
+    <!--<record model="ir.ui.menu" id="test_module.menu_main">-->
+    <!--<record model="ir.ui.menu" id="menu_main">
+        <field name="name">Example main menu</field>
+    </record>-->
+    <!--es lo mismo que el anterior-->
+    <menuitem
+        id="menu_main"
+        name="Example main menu"
+        sequence="999"
+    />
+
+    <menuitem
+        id="menu_sub"
+        name="Sub_menu_example"
+        parent="menu_main"
+    />
+    <!--ir.actions.act_window se puede hacer por el metodo record con este modelo-->
+    <!--Id del action window como el id del menu xml-id  en el depurador EXTERNAL ID-->
+    <!--Nombre visual del action window-->
+    <!--Modelo al que hace referencia-->
+    <!--view_tipe:Forma de visualización, ejm: form, tree, kanban, etc-->
+    <!--view_mode: vista que se verá la acción-->
+
+    <!--
+    view_type: El view_type es la forma en la que vamos a interaccionar con el
+    action.
+    view_mode: Se indican que vistas vamos a desplegar en esa acción.
+    -->
+    <act_window
+        id="action_example"
+        name="Example Action Window"
+        res_model="example.model"
+        view_type="form"
+        view_mode="tree,kanban,form"
+    />
+
+    <menuitem
+        id="menu_subsub"
+        name="Sub_Sub_menu"
+        parent="menu_sub"
+        action="action_example"
+    />
+
+
+</odoo>

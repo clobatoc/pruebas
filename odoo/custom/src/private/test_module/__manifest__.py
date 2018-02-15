@@ -19,5 +19,8 @@
     'website':'https://www.campoytierra.com',
     'version':'11.0.1.0.0',
     'category':'Tools',
+    'data':[
+        'views/example_view.xml',
+    ]
 }
 
